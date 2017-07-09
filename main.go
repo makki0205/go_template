@@ -33,4 +33,5 @@ func main(){
 			"email": "llxo2_5oxll@icloud.com",
 		})
 	})
+	r.Run(":3000")
 }
