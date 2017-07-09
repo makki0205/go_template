@@ -1,12 +1,13 @@
 package env
 
 import (
-	"io/ioutil"
 	"gopkg.in/yaml.v2"
+	"io/ioutil"
 )
+
 var DatabaseDriver, DatabaseSource = getDBConfig()
 
-func getDBConfig()(string, string){
+func getDBConfig() (string, string) {
 	var buf, err = ioutil.ReadFile("dbconfig.yml")
 	if err != nil {
 		panic(err)
@@ -16,7 +17,7 @@ func getDBConfig()(string, string){
 	if err != nil {
 		panic(err)
 	}
-	driver := m["development"].(map[interface {}]interface {})["dialect"].(string)
-	source := m["development"].(map[interface {}]interface {})["datasource"].(string)
+	driver := m["development"].(map[interface{}]interface{})["dialect"].(string)
+	source := m["development"].(map[interface{}]interface{})["datasource"].(string)
 	return driver, source
 }

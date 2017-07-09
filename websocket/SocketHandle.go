@@ -4,10 +4,12 @@ import (
 	"github.com/trevex/golem"
 	"net/http"
 )
-type joinModel struct{
+
+type joinModel struct {
 	ID int `json:"id"`
 }
-func GetHandle()func(http.ResponseWriter, *http.Request){
+
+func GetHandle() func(http.ResponseWriter, *http.Request) {
 	return createRouter().Handler()
 }
 
@@ -17,10 +19,11 @@ func createRouter() *golem.Router {
 
 	return router
 }
+
 // connection接続時の処理はここに書く
-func connectHndle(conn *golem.Connection, http *http.Request)  {
+func connectHndle(conn *golem.Connection, http *http.Request) {
 	id := GetManager().Set(conn)
-	conn.Emit("join",joinModel{
-		ID:id,
-	} )
+	conn.Emit("join", joinModel{
+		ID: id,
+	})
 }

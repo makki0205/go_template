@@ -1,13 +1,13 @@
 package main
 
 import (
-	"github.com/itsjamie/gin-cors"
 	"github.com/gin-gonic/gin"
-	"github.com/makki0205/web/websocket"
+	"github.com/itsjamie/gin-cors"
 	"github.com/makki0205/web/midelware"
+	"github.com/makki0205/web/websocket"
 )
 
-func main(){
+func main() {
 	//gin.SetMode(gin.ReleaseMode)
 	r := gin.New()
 	r.Static("/js", "./public/js")
@@ -28,8 +28,8 @@ func main(){
 	api.Use(cors.Middleware(middleware.CorsConfig))
 	api.GET("/makki", func(c *gin.Context) {
 		c.JSON(200, gin.H{
-			"name": "katsuramaki taiki",
-			"sex": "man",
+			"name":  "katsuramaki taiki",
+			"sex":   "man",
 			"email": "llxo2_5oxll@icloud.com",
 		})
 	})
