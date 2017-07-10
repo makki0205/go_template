@@ -9,7 +9,7 @@ import (
 
 func main() {
 	//gin.SetMode(gin.ReleaseMode)
-	r := gin.New()
+	r := gin.Default()
 	r.Static("/js", "./public/js")
 	r.Static("/image", "./public/image")
 	r.Static("/css", "./public/css")
