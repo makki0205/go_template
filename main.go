@@ -2,9 +2,9 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/itsjamie/gin-cors"
-	"github.com/makki0205/web/midelware"
-	"github.com/makki0205/web/websocket"
+	cors "github.com/itsjamie/gin-cors"
+	"github.com/makki0205/go_template/middleware"
+	"github.com/makki0205/go_template/websocket"
 )
 
 func main() {
